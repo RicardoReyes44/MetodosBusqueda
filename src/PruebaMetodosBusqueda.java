@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 class MetodosBusqueda{
@@ -30,7 +31,7 @@ public class PruebaMetodosBusqueda {
 		long array[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
 		
 		do {
-			
+		try {
 			System.out.println("--------------MENU--------------");
 			System.out.println("1.- Busqueda Binaria");
 			System.out.println("2.- Busqueda Hash");
@@ -57,7 +58,10 @@ public class PruebaMetodosBusqueda {
 			}else {
 				System.out.println("No existe esa opcion, prueba de nuevo");
 			}
-			System.out.println();
+		}catch(InputMismatchException e) {
+			System.out.println("Error en la entrada de datos <" + e + ">, vuevle a intentarlo");
+		    entrada.nextLine();
+		}System.out.println();
 		}while(true);
 		
 		System.out.println("\n\nPrograma terminado");
